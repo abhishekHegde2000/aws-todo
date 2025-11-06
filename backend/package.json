@@ -2,11 +2,11 @@
   "name": "todo-backend",
   "version": "1.0.0",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/server.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "tsx watch src/index.ts"
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
