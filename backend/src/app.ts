@@ -2,6 +2,7 @@ import express from "express";
 // Use type imports for type-only imports
 import type { Express, Request, Response } from "express";
 import cors from "cors";
+import todoRoutes from "./modules/todos/todo.routes.js";
 
 const app: Express = express();
 
@@ -20,7 +21,7 @@ app.get("/health", (req: Request, res: Response) => {
 
 // TODO: Later, we will add our feature routes here, like:
 // import todoRoutes from './modules/todos/todo.routes';
-// app.use('/api/v1/todos', todoRoutes);
+app.use("/api/v1/todos", todoRoutes);
 
 // We export 'app' so server.ts can import it
 export default app;
