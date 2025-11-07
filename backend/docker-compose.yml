@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  # This is our Postgres Database service
+  db:
+    image: postgres:latest
+    container_name: todo-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: todo_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - todo-pgdata:/var/lib/postgresql
+
+volumes:
+  # This defines the named volume for data persistence
+  todo-pgdata:
