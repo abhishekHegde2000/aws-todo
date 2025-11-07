@@ -3,7 +3,7 @@ import { z } from "zod";
 // Schema for creating a todo (body validation)
 export const createTodoSchema = z.object({
   body: z.object({
-    title: z.string().min(1, "Title is required"),
+    text: z.string().min(1, "Title is required"),
     description: z.string().optional(),
   }),
 });
