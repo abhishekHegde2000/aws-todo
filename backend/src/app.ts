@@ -3,6 +3,7 @@ import express from "express";
 import type { Express, Request, Response } from "express";
 import cors from "cors";
 import todoRoutes from "./modules/todos/todo.routes.js";
+import authRoutes from "./modules/auth/auth.routes.js";
 
 const app: Express = express();
 
@@ -19,8 +20,10 @@ app.get("/health", (req: Request, res: Response) => {
   res.status(200).json({ status: "UP" });
 });
 
-// TODO: Later, we will add our feature routes here, like:
-// import todoRoutes from './modules/todos/todo.routes';
+// Auth routes
+app.use("/api/v1/auth", authRoutes);
+
+// Todo routes
 app.use("/api/v1/todos", todoRoutes);
 
 // We export 'app' so server.ts can import it
